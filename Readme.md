@@ -27,7 +27,7 @@ First, install the necessary libraries:
 
 pip install torch torchvision diffusers accelerate huggingface_hub
 
-2. Access the Model
+### 2. Access the Model
 #### You can load and use the model in your Python environment as follows:
 from diffusers import StableDiffusionPipeline
 import torch

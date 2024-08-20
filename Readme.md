@@ -27,24 +27,24 @@ First, install the necessary libraries:
 
 pip install torch torchvision diffusers accelerate huggingface_hub
 
-## 2. Access the Model
+2. Access the Model
 You can load and use the model in your Python environment as follows:
 from diffusers import StableDiffusionPipeline
 import torch
 
-### Load the fine-tuned model
+Load the fine-tuned model
 model_id = "majid230/Realistic_Vision_V2.0"
 pipe = StableDiffusionPipeline.from_pretrained(model_id, torch_dtype=torch.float32)
 pipe = pipe.to("cuda" if torch.cuda.is_available() else "cpu")
 
-### Generate an image from a prompt
+Generate an image from a prompt
 prompt = "A futuristic cityscape at sunset"
 image = pipe(prompt, num_inference_steps=50, guidance_scale=7.5).images[0]
 
-### Save or display the image
+Save or display the image
 image.save("generated_image.png")
 image.show()
-## 3. Customization
+## 3.Customization
 num_inference_steps: Adjust this parameter to control the number of steps the model takes during image generation. More steps typically yield higher-quality images.
 guidance_scale: Modify this to control how closely the generated image follows the prompt. Higher values make the image more prompt-specific, while lower values allow for more creative interpretations.
 ## Acknowledgment
